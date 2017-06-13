@@ -1,0 +1,38 @@
+<html>
+
+<head>
+ Rule of 72 generalized
+</head>
+<body>
+<p>
+The <a href=https://betterexplained.com/articles/the-rule-of-72/> Rule of 72</a> is a useful shortcut to determine the approximate the time required to double one's investment. By this rule, It takes roughly 72/r years to double your principal/investment, where <code>r</code> is the annual rate of compounding interest. So, with <code>12% p.a.</code> interest rate (compounded annually), you can double your investment in 6 (<code>72/12</code>) years. The rule can also be used to calculate the rate of interest required to double a sum of money in <code>y</code> years (<code>r = 72/y</code>).
+</p>
+<p>
+This is a useful rule. But, a general rule of thumb that estimates the time required to convert an amount <code>P</code> into <code>X*P</code> would be better. In this article you will learn that.
+</p>
+
+<h3> Problem </h3>
+<p>
+Say I want to convert <code>50,000 $</code> to <code>1,000,000 $</code> at <code>8 % p.a.</code> How many years will that take?
+Our goal here is to be able to solve this problem in our head (easily).
+</p>
+
+<h3> Possible Solutions </h3>
+
+<h4> Use Rule of 72 to get a vague estimate </h4>
+
+<p><code>1,000,000</code> is <code>20</code> times <code>50,000</code>.</p>
+<p>
+We know that the amount will double in <code>72/8=9</code> years. At the end of <code>9</code> years, the amount is <code>100,000</code>. Crossing <code>18 (2*9)</code> years it becomes <code>200,000 = 2<sup>2</sup> * (50,000)</code>. After <code>27 (3*9)</code> years, it becomes <code>400,000 = 2<sup>3</sup> * (50,000)<code>. Notice the pattern that after n*9 years the total amount is <code>2<sup>n</sup> * (50,000)</code>. We know that <code>20</code> lies between <code>2<sup>4</sup> (16)</code> and <code>2<sup>5</sup> (32)</code>. In <code>9*4</code> years our amount grows to <code>800,000 (16*50,000)</code> and  in <code>9*5</code> years our amount grows to <code>1,600,000 (32*50,000)</code>. <code>1,00,000 falls in between <code>800,000 and <code>1,600,000. So the time it takes to get a million dollars will be anywhere between <code>36 (9**4) and <code>45 (9**5) years. For the <code>37</code>th year we get <code>64,000 (0.08 * 800,000) as interest. The <code>38th it will be <code>64,000 and some more. For <code>39th it will be some more than <code>38th. As we know that just the interest will be at least <code>64,000 each year, it adds up more <code>196,000 in <code>3 years. So we get a million in <code>36+3 years. The exact value after <code>39 years is <code>1,005,764.88 which is not that quite far. We need to be careful that these small differences (<code>5764.88 $ in this case) will grow to a large amount when compounding for more years. The problem with this approach is that the estimated<code>36-45 has a gap of <code>11 years. This gap widens as the rate of interest gets smaller. We need a better solution that can reduce this gap.
+</p>
+<h3 A clever solution </h3>
+Just as we have a trick to double our money, we also have a trick to triple our money. It takes 110/r years to triple. To make our money 4 times initial, it takes 39/r years. To make it 5 times it takes 161/r years and so on ... to make it 20 times it takes 300/r years. We need to remember 20 numbers to be able to estimate the number of years for multiplying our principal for up to 20 times. Remembering so many numbers is difficult. So to calculate for a multiple of up to 100 times, we should remember 100 such  rules? NO. Luckily there is a trick. You would have learnt in school that any number can be written as a product of just prime numbers. Yes. Take out a paper and work it out. For example 20=2 *2 * 5, 53 = 53 (it is a prime number), 45= 3*3*5. So here is how you do it:
+1. Represent the number X (20 in our problem) as a product of its primes. 20 = 2**2 *5**1.
+Now before we go to the next step, look at our final amount of 1,000,000 way. 1,000,000=20 * 50,000 = (2**2)*(5**1)* 50,0000. If we word out the last part of the equation, we can say it as "Take 50,000 and make it five times and then double it twice" or "Take 50,000 and double it twice and then make the result five times" (because (2**2)*(5**1)* 50,0000= (5**1)*(2**2)* 50,0000, we just rearranged). Rule of 72 will tell us how to double any amount (2**2) and Rule of 161 will tell us how to any amount 5 times. In the previous solution we discovered the pattern that after n*9 years the total amount is 2**n * (50,000). As 72/8=9, we need 18 (n*9, n=2) years to make 50,000 to 50,000 * (2*2). Notice that after the end of the year, once the interest is added to out principal, we calculate interest on the new amount and dont need to consider the past amount. With this in mind, we can now take 50,000 * (2**2)  as the new principal. If we make it five times, then we get a million (1,000,000 = (5**1)* 50,000 * (2**2)). Using Rule of 161 (161/8 = 20 approx) we know it takes 20 years. 50,000 takes 18 years to become 200,000 and 200,000 takes 20 years to become 1,000,000. So we need 18+20=38 years to make 50,000 to 100,000. The actual amount is 931,263.78, but we are very close. In general if we can express a number  as 2**a) ...
+
+
+### The faster solution
+Though the above solution is quite accurate, there is the problem of remembering 25 rules and working out 25 divisions. We can forego a bit of accuracy by using an approximation trick. The trick is to approximate a number using a small set of prime factors rather than all. We will try to approximate any number as a product of prime factors 2,3,5, and 7. So 20 is approximately 3*7 (=21). 53 is approximately (2*2*2*7=56) and so on.
+Now it becomes obvious that we need to remember only 4 rules {}, to get a good approximation.
+</body>
+</html>
