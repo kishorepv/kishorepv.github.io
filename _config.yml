@@ -7,7 +7,7 @@ avatar:
 footer-links:
   email:
   github: kishorepv
-  linkedin: ksihorepv
+  linkedin: kishorepv
   twitter: shrieko
 
 disqus: kishorepv
@@ -15,9 +15,8 @@ disqus: kishorepv
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: http://kishorepv.github.io
 
 permalink: /:title/
 
