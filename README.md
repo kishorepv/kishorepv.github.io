@@ -1,3 +1,3 @@
-# [kishorepv.github.io](http://www.kishorepv.github.io)
+# [kishorepv.github.io](https://kishorepv.github.io)
 
 Computer Science, Maths and more.
