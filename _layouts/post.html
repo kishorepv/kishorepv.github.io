@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    text-align: justify;
+  }
+  code {
+    color: #191919;
+    background-color: #eef;
+  }
+  table thead tr th {
+    text-align:center;
+  }
+  img {
+    display: block;
+    margin: auto;
+    border: 1px solid #999;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  figcaption {
+    color: #555;
+  font-size: 14px;
+  text-align: center;
+    padding-bottom: 20px;
+  }
+
+  </style>
+
+  <base target="_blank">
+</head>
+
+
+<article class="post">
+  <h1 style="text-align: left">{{ page.title }}</h1>
+  <div class="date">
+    {{ page.date | date: "%B %e, %Y" }}
+  </div>
+    </br>
+
+
+  <div class="entry">
+    {{ content }}
+  </div>
+</br>
+
+  {% include disqus.html %}
+</article>

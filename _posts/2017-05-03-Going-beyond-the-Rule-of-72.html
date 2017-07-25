@@ -1,63 +1,36 @@
+---
+layout: post
+title: Beyond the Rule of 72
+comments: true
+---
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>  Going beyond the Rule of 72 </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  body {
-    font-family: "Open Sans", sans-serif;
-  }
-  code {
-    color:None;
-  }
-  table thead tr th {
-    text-align:center;
-  }
-  </style>
-  <base target="_blank">
-</head>
-
 <body>
-  <div class="container">
-    <div class="page-header text-center">
-        <h1>Going beyond the Rule of 72</h1>
-    </div>
-<div class="panel-group">
-<div class="panel panel-default">
-<div class="panel-body">
   <p>
 The <a href=https://betterexplained.com/articles/the-rule-of-72/> Rule of 72</a> is a useful shortcut to determine the approximate time required to double one's investment. By this rule, It takes roughly <code>72/r</code> years to double your principal/investment, where <code>r</code> is the annual rate of compounding interest. So, with <code>12% p.a.</code> interest rate (compounded annually), you can double your investment in 6 (<code>72/12</code>) years. The rule can also be used to calculate the rate of interest <code>r</code> required to double a sum of money in <code>y</code> years (<code>r = 72/y</code>).
 </p>
 <p>
 This is a useful rule. But, a general rule of thumb that estimates the time required to convert an amount <code>P</code> into <code>X*P</code> would be better. In this article we will learn to do that.
 </p>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
+
+
 <h3 class="text-center"> PROBLEM </h3>
+</br>
 <p>
 Say, we need to convert <code>50,000 $</code> to <code>1,000,000 $</code> at <code>8 % p.a.</code> How many years will that take?
 Our goal here is to be able to solve this problem in our head (easily).
 </p>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
+
+
 <h3 class="text-center"> SOLUTION </h3>
+</br>
 <p>
  First we will use our knowledge of Rule of 72, to get a rough estimate. Then we will use a clever trick to solve the problem in an elegant manner. Finally, we will use the concept of approximation to make the elegant solution feasible to be computed in our heads.
  </p>
-<div class="panel-group">
-<div class="panel panel-default">
-  <div class="panel-heading"><h4> Use Rule of 72 to get a rough estimate </h4></div>
-  <div class="panel-body">
+</br>
+<h4> 1. Use Rule of 72 to get a rough estimate </h4>
+</br>
 <p><code>1,000,000</code> is <code>20</code> times <code>50,000</code>.</p>
 <p>
 We know that the amount will double in <code>72/8=9</code> years. At the end of <code>9</code> years, the amount is <code>100,000</code>. Crossing <code>18 (2*9)</code> years it becomes <code>200,000 = 2<sup>2</sup> * (50,000)</code>. After <code>27 (3*9)</code> years, it becomes <code>400,000 = 2<sup>3</sup> * (50,000)</code>.
@@ -71,11 +44,9 @@ We know that the amount will double in <code>72/8=9</code> years. At the end of 
 <p>
   The exact value after <code>39</code> years is <code>1,005,764.88</code> (which can be calculated <a href="https://financialmentor.com/calculator/compound-interest-calculator"> here </a>). We need to be careful of this small difference of <code>5764.88 $</code>(<code>1,005,764.88-1,00,000</code>). It will grow to a large amount when compounding for more years due to exponential nature of compounding. That aside, the problem with this approach is that the estimated <code>36-45</code> years has a range/gap of <code>11</code> years. This gap widens as the rate of interest gets smaller. And calculating Simple Interest leads to larger errors when this range grows. We need a better solution that can reduce this range/gap and one which does not resort to calculation of Simple Interest.
 </p>
-</div>
-</div>
-<div class="panel panel-default">
-  <div class="panel-heading"><h4>An elegant solution</h4></div>
-<div class="panel-body">
+</br>
+<h4>2. An elegant solution</h4>
+</br>
 <p>
 Just as we have a rule to double our money, we also have a rule to triple our money. It takes <code>110/r</code> years to triple. To make our money <code>4</code> times initial, it takes <code>139/r</code> years. To make it <code>5</code> times it takes <code>161/r</code> years and so on ... to make it <code>20</code> times it takes <code>300/r</code> years. We need to remember 20 rules to be able to estimate the number of years for multiplying our principal for up to 20 times. To calculate for a multiple of up to 100 times, we should remember 100 such  rules. Remembering so many numbers is a challenge for many. Luckily, there is a neat mathematical trick that eases the load on our memory.
 </p>
@@ -136,11 +107,9 @@ becomes
 <code>Required years, Y=(<strong>Rule for prime1</strong>) * a + (<strong>Rule for prime2</strong>) * b +(<strong>Rule for prime3</strong>) * c + ...</code>
 </br>
 </p>
-</div>
-</div>
-<div class="panel panel-default">
-  <div class="panel-heading"><h4> The faster solution </h4></div>
-<div class="panel-body">
+</br>
+<h4>3. The faster solution </h4>
+</br>
 <p>
 The above solution is quite accurate. But then there is the problem of remembering 15 rules for multipliers till 50 (as we need 15 prime numbers to represent any integer from 1 to 50). We can forego a bit of accuracy by using an approximation trick. The trick is to approximate the multiplier (<code>X</code>) using a small set of prime factors, rather than all. We will try to approximate any <code>X</code> as a product of prime factors <code>2,3,5,</code> and <code>7</code>; 53 as approximately 56 (<code>2<sup>3</sup><sub>*</sub>7=56</code>), 29 as 30 (<code>2<sup>1</sup><sub>*</sub>3<sup>1</sup><sub>*</sub>5<sup>1</sup>=30</code>) and so on.
 Now we need to remember only 4 rules (<strong> Rule of 72, Rule of 110, Rule of 161</strong> and <strong>Rule of 195</strong>) to get a good approximation.
@@ -176,9 +145,6 @@ With little practise you should be able to work out the answer in your head. You
 </p>
 </p>
 </p>
-</div>
-</div>
-</div>
-</div>
+
 </body>
 </html>

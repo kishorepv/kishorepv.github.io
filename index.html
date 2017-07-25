@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+---
+<style>
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  text-align: justify;
+}
+</style>
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
 
-<head>
-  <meta charset="utf-8">
-  <title>  Kishore P. V. </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  body {
-    font-family: "Open Sans", sans-serif;
-  }
-  </style>
-  <base target="_blank">
-</head>
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-<body>
-  <div class="container">
-  <a href="https://kishorepv.github.io/Going-beyond-the-Rule-of-72.html"> Going beyond "Rule of 72"</a>
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
 </div>
-</body>
-</html>
