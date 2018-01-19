@@ -1,6 +1,6 @@
 ---
-layout: post
-title: BUN functions - Applying the Pareto Principle for generating random numbers in numpy\
+layout: page
+title: BUN functions - Applying the Pareto Principle for generating random numbers in numpy
 
 comments: true
 ---
@@ -77,6 +77,7 @@ Normal distribution enables a way of picking numbers (mostly) from a bell shaped
 p.random.normal(loc=mean, scale=standard_deviation, size=None)
 #loc and scale specify the mean and standard deviation values used to describe a normal distribution
 ```
+
 > Adult male heights are normally distributed - on average 70 inches (5'10) with a standard deviation of 4 inches
 
 Normal distribution with mean=0 and standard deviation=1 is called Standard Normal distribution.
