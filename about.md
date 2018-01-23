@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Machine Learning enthusiast. Computer Science Graduate. I work at [Logmein](https://www.logmeininc.com) (formerly [Citrix R&D](https://www.citrix.co.in/)).
+Machine Learning enthusiast. Computer Science Graduate. I work at [LogMeIn](https://www.logmeininc.com) (formerly [Citrix R&D](https://www.citrix.co.in/)).
 
 
 ### Contact me
