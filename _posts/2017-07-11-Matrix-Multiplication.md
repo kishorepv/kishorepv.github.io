@@ -4,7 +4,7 @@ title: Matrix Multiplication - A different perspective
 comments: true
 ---
 
-Matrix multiplication is a common binary operation we come across in engineering and mathematics. We see it a lot in machine learning algorithms. Unlike multiplication of scalars we have a prerequisite for matrices (i.e. _number of columns in first matrix = number of rows in second matrix_). The output of a valid matrix multiplication has _output rows=number of rows in first matrix_ and _output columns=number of columns in second matrix_. I visualize matrix multiplication in a <code class="highlighter-rouge">XY-grid</code> for validating the feasibility of multiplication and to determine the shape of the output matrix. We will explore in this method in this article.
+Matrix multiplication is a common operation we come across in engineering and mathematics. We see it a lot in machine learning algorithms. Unlike multiplication of scalars we have a prerequisite for matrices (i.e. _number of columns in first matrix = number of rows in second matrix_). The output of a valid matrix multiplication has _output rows=number of rows in first matrix_ and _output columns=number of columns in second matrix_. I visualize matrix multiplication in a <code class="highlighter-rouge">XY-grid</code> for validating the feasibility of multiplication and to determine the shape of the output matrix. We will explore in this method in this article.
 
 **The idea is to arrange both the matrices in two of the XY-grid quadrants, and use a visual property in the other two quadrants to validate, and determine the shape of the output matrix.**
 
